@@ -1,0 +1,142 @@
+*{
+    font-family:arial;
+ }
+ .banner-img{
+    width: 100%;
+ }
+ .section-img{
+    width: 300px;
+    flex: 30%;
+ }
+ .section{
+    flex: 70%;
+ }
+ .category-img, .top-product-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+ }
+ body{
+    background-color: rgb(232, 230, 230);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top right;
+    background-attachment: fixed;
+ }
+ .menu-item{
+    color: rgb(11, 10, 10);
+    font-size:30px;
+    font-weight: 900;
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    list-style-type: none;
+ }
+ .menu-items{
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 500;
+   
+ }
+ .menu-item:hover{
+    text-decoration: underline;
+    color: white;
+ }
+ #heading1{
+    font-size: 50px;
+    font-weight: 400;
+    font-style: italic;
+    color: darkblue;
+    text-decoration: underline;
+ }
+ h2{
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+    color: darkblue;
+ }
+ h3{
+    font-size: 18px;
+    font-weight: 400;
+    color: darkblue;
+ }
+ a{
+    text-decoration: none;
+ }
+ 
+ 
+ .section-div{
+    background-color: white;
+    box-shadow: 5px -5px 5px 2px rgb(198, 198, 199);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+ }
+ .categories{
+    width: 90%;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+ }
+ .category{
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+ }
+ .top-product-img{
+    margin: 5px;
+ }
+ .top-products{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+ }
+ .top-prod{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+ }
+ .top-prod:hover{
+    transform: translateY(-5px);
+ }
+ .add-btn{
+    margin-top: 170px;
+    margin-left: 60px;
+    padding: 5px 5px;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: red;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    position: absolute;
+    display: none;
+ }
+ 
+ 
+ 
+ 
+ .c2{
+    display: block;
+ }
+ 
+ 
+ @media screen and (min-width:1000px) and (max-width:1200px){
+    body{
+        background-color: aqua;
+    }
+ }
+ 
