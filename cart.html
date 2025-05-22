@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart by code adem</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <ul class="menu">
+    <a href=""><h2 class="menu-item">Home</h2></a>
+    <a href=""><h2 class="menu-item">About</h2></a>
+    <a href=""><h2 class="menu-item">Category</h2></a>
+    <a href=""><h2 class="menu-item">Top Products</h2></a>
+    <a href="singup.html" target="_blank"><h2 class="menu-item">signup</h2></a>
+    <a href="https://www.amazon.fr/" target="_blank"><h2 class="menu-item">Amason store</h2></a>
+    </ul>
+    
+    <div class="forms">
+        <form class="form1">
+            <h1 class="signup_input">Cilent information</h1>
+            <label class="signup_input" to="firstname">Firstname</label>
+            <input class="signup_input" type="text" name="firstname" placeholder="firstname..."/>
+            
+            <label class="signup_input" to="lastname">Lastname</label>
+            <input class="signup_input" type="text" name="lastname" placeholder="lastname..."/>    
+            
+            <label class="signup_input" to="email">Email</label>
+            <input class="signup_input" type="email" name="email" placeholder="email..."/>
+            
+            <label class="signup_input" to="telephone">telephone</label>
+            <input type="tel" value="+213" name="telephone" placeholder="nember.....">    
+            
+            <label class="signup_input"  for="">city</label>
+            <select name="city" id="city-id">
+                <option value="">algeria</option>
+                <option value="">france</option>
+            </select>
+            
+            <label class="signup_input" > adress</label>
+            <input class="signup_input" type="text" name="adress">            
+        </form>
+        
+        
+        <form class="form2">
+            <h2 class="input_form" > Order sammary</h2>
+            <label class="input_form">poromo code </label>
+            <input class="input_form" type="text" name="promo code">
+            <button  class="input_form">apply</button>
+            <label class="input_form">product cost</label>
+            <label class="input_form" id="total">0</label>
+            <button class="input_form.btn">confirm Order</button>
+            <button id="input_clear_btn">clear</button>
+
+        </form>
+
+    </div>
+    <div class="prod-info">
+        <h2>prouduct information</h2>
+        <table>
+            <tr class="table-head">
+                <th>product</th>
+                <th>title</th>
+                <th>quantity</th>
+                <th>Price</th>
+            </tr>
+            <tr class="table-data">
+                <td><img class="prod-img" src="/image1/product1.jfif" alt="prod-1"></td>
+                <td>puma</td>
+                <td>1</td>
+                <td>4000 DA</td>
+            </tr>
+            <tr class="table-data">
+                <td><img class="prod-img" src="/image1/product4.jfif" alt="prod-2"></td>
+                <td>Nike air</td>
+                <td>1</td>
+                <td>4600 DA</td>
+            </tr>
+            
+        </table>
+    </div>
+    
+</body>
+<script>
+    const cart = JSON.parse(localStorage.getItem("cart-data")) || {} ;
+    const table = document.querySelector("table")
+
+    const existingRows = document.querySelectorAll(".table-data");
+    existingRows.forEach(row => row.remove());
+
+    let total = 0
+    cart.forEach(product => {
+        let row = document.createElement('tr');
+        row.classList.add("table-data");
+
+        let clear= document.getElementById('input_clear_btn');
+        clear.addEventListener("click", function(){
+            localStorage.removeItem("cart-data")
+        })
+        let numberprice = parseFloat(product.price.replace(/[^\d.]/g, '')) || 0;
+
+        total += numberprice
+
+        row.innerHTML = `
+           <td><img class="prod-img" src="${product.img}" alt="${product.title}"></td>
+           
+           <td>${product.title}</td>
+          <td>1</td>
+           <td>${product.price}</td>
+        `
+
+        table.appendChild(row)
+        let x = document.getElementById("total")
+        x.textContent = total+"$"
+    })
+
+
+
+
+</script>
+</html>
